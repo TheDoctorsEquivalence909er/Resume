@@ -1,0 +1,129 @@
+
+
+<div id="a4-page" style="
+    width:210mm;
+    height:297mm;
+    margin:0 auto;
+    background:#f5f5f5;
+    font-family:sans-serif;
+    padding:10mm;
+    box-sizing:border-box;
+">
+    <!-- Black header with bullets -->
+    <div id="header" style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        background:black;
+        color:white;
+        font-size:1.5rem; /* starting font size */
+        padding:1rem 2rem;
+        width:100%;
+        box-sizing:border-box;
+        white-space:nowrap;
+    ">
+      <div class="text">Francesco Hernicsh</div>
+      <div style="flex:0; margin:0 0.5rem; color:FloralWhite;">•</div>
+      <div class="text">618 409 1278</div>
+      <div style="flex:0; margin:0 0.5rem; color:FloralWhite;">•</div>
+      <div class="text">chnerichs0822@gmail.com</div>
+    </div>
+
+
+  <div style="display:flex; align-items:flex-start; gap:1rem; margin-top:50px;  width:100%;">
+      <!-- Heading (no underline or dash) -->
+      <h1 style="
+          margin:0; 
+          white-space:nowrap; 
+          color:black; 
+          text-decoration:none; 
+          border:none;   /* remove any border underlines */
+          font-size:1.2rem;
+          margin-right:75px;
+      ">
+        Summery
+      </h1>
+      <p style="margin-top:0; line-height:1.2; flex:1; color:black;">
+        Computer Science student with experience in software development and graphical pipelines. Skilled in C++ and Rust, with strong abilities in writing maintainable code and designing overall system architecture. Adept at thinking ahead and visualizing the big picture, focusing on code structure and long-term maintainability while continuing to improve algorithmic problem-solving
+      </p>
+  </div>
+
+
+<div style="font-family:sans-serif; color:black; padding:20px; width:100%;">
+
+  <!-- ROW 1 -->
+  <div style="display:flex; gap:20px; align-items:flex-start;">
+    <div style="width:180px;">
+      <h1 style="margin:0; font-size:1.4rem; line-height:1.2;    border: none;"> Professional Experience</h1>
+    </div>
+    <div style="display:flex; flex-direction:column; align-items:center;">
+      <!-- thick near left heading -->
+      <div style="width:6px; height:40px; background:black;"></div>
+      <!-- thin continuous line extending to next row -->
+      <div style="width:2px; height:200px; background:black;"></div>
+    </div>
+    <div style="width:400px;">
+      <h2 style="margin:0; font-size:1.1rem;">Heading Two</h2>
+      <h3 style="margin-top:6px; font-size:1rem;">Heading Three — where</h3>
+      <ul style="margin-top:10px; padding-left:24px; font-size:0.95rem; line-height:1.4;">
+        <li>One main heading on the left with wrap-around text</li>
+        <li>Vertical line separates left & right</li>
+        <li>Heading2 and Heading3 stacked on the right</li>
+        <li>Make sure vertical line is thicker near headings</li>
+      </ul>
+    </div>
+    <div style="margin-left:auto; width:160px; font-size:0.95rem; text-align:right; display:flex; flex-direction:column;">
+      <div><strong>Start:</strong> Jan 2025</div>
+      <div style="margin-top:5px;"><strong>Stop:</strong> Dec 2025</div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2 -->
+  <div style="display:flex; gap:20px; align-items:flex-start; margin-top:40px;">
+    <div style="width:180px;"></div>
+    <div style="display:flex; flex-direction:column; align-items:center;">
+      <!-- thick near right heading -->
+      <div style="width:6px; height:40px; background:black;"></div>
+      <!-- thin continuous line extending downward -->
+      <div style="width:2px; height:200px; background:black;"></div>
+    </div>
+    <div style="width:400px;">
+      <h2 style="margin:0; font-size:1.1rem;">Heading Two</h2>
+      <h3 style="margin-top:6px; font-size:1rem;">Heading Three — where</h3>
+      <ul style="margin-top:10px; padding-left:24px; font-size:0.95rem; line-height:1.4;">
+        <li>Repeat this format for any additional headings</li>
+        <li>Left column stays empty</li>
+      </ul>
+    </div>
+    <div style="margin-left:auto; width:160px; font-size:0.95rem; text-align:right; display:flex; flex-direction:column;">
+      <div><strong>Start:</strong> Jan 2025</div>
+      <div style="margin-top:5px;"><strong>Stop:</strong> Dec 2025</div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+</div>
+
+<script>
+  // Shrink text to fit the header width
+  const header = document.getElementById('header');
+  const texts = header.querySelectorAll('.text');
+
+  function shrinkText() {
+    let fontSize = 15; // starting font size in px
+    texts.forEach(t => t.style.fontSize = fontSize + 'px');
+    
+    while(header.scrollWidth > header.clientWidth && fontSize > 8) {
+      fontSize -= 1;
+      texts.forEach(t => t.style.fontSize = fontSize + 'px');
+    }
+  }
+
+  shrinkText();
+  window.addEventListener('resize', shrinkText);
+</script>
