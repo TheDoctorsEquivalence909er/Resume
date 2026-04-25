@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Resume</title>
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: white;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  #a4-page {
+    width: 250mm;
+    margin: 0 auto;
+    background: #f5f5f5;
+    color: black;
+    padding: 10mm;
+  }
+  /* print-specific fix */
+  @media print {
+    html, body {
+      width: 250mm;
+      margin: 0;
+      padding: 0;
+      background: white !important;
+    }
+    #a4-page {
+      width: 250mm;
+      margin: 0;
+      padding: 10mm;
+      background: #f5f5f5 !important;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  }
+  /* ================= HEADER ================= */
+  #header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 14px 18px;
+    font-size: 14px;
+    line-height: 1.2;
+    flex-wrap: nowrap;
+  }
+  #header .text {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    text-align: center;
+    flex: 1 1 0;
+  }
+  #header .bullet {
+    flex: 0 0 auto;
+    color: FloralWhite;
+    padding: 0 4px;
+  }
+  /* ================= SUMMARY ================= */
+  .summary-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 36px;
+    width: 100%;
+  }
+  .section-title {
+    margin: 0;
+    color: black;
+    text-decoration: none;
+    border: none;
+    line-height: 1.2;
+  }
+  .summary-heading {
+    white-space: nowrap;
+    font-size: 1.2rem;
+    min-width: 130px;
+  }
+  .summary-text {
+    margin: 0;
+    line-height: 1.4;
+    text-align: justify;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  /* ================= EXPERIENCE ================= */
+  .experience-wrap {
+    padding: 20px;
+    width: 100%;
+    color: black;
+  }
+  .experience-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .experience-row + .experience-row {
+    margin-top: 18px;
+  }
+  .experience-left {
+    width: 180px;
+    flex: 0 0 180px;
+  }
+  .experience-title {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    border: none;
+  }
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 12px;
+    margin-top: 4px;
+  }
+  .timeline-top {
+    width: 6px;
+    height: 40px;
+    background: black;
+  }
+  .timeline-line {
+    width: 2px;
+    height: 170px;
+    background: black;
+  }
+  .experience-main {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 420px;
+  }
+  .experience-main h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    border: none;
+  }
+  .experience-main h3 {
+    margin: 6px 0 0 0;
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  .experience-main ul {
+    margin-top: 10px;
+    padding-left: 24px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .experience-dates {
+    flex: 0 0 150px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    text-align: right;
+    line-height: 1.6;
+    padding-top: 2px;
+  }
+  /* ================= EDUCATION + SKILLS ================= */
+  .lower-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px 40px;
+    color: black;
+  }
+  .info-row {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .info-left {
+    width: 200px;
+    flex: 0 0 200px;
+  }
+  .info-left h1 {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+  .info-main {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .education-block {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .education-text {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .education-text .degree {
+    font-weight: bold;
+    font-size: 1.05rem;
+  }
+  .education-text .school {
+    margin-top: 2px;
+  }
+  .education-gap {
+    height: 20px;
+  }
+  .education-years {
+    flex: 0 0 170px;
+    white-space: nowrap;
+    font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    text-align: right;
+  }
+  .skills-list {
+    width: 320px;
+    max-width: 100%;
+  }
+  .skills-list ul {
+    margin: 0;
+    padding-left: 18px;
+    line-height: 1.3;
+    font-size: 0.95rem;
+  }
+</style>
+</head>
+<body>
+<div id="a4-page">
+  <!-- Header -->
+  <div id="header">
+    <div class="text">Francesco Hernicsh</div>
+    <div class="bullet">•</div>
+    <div class="text">618 409 1278</div>
+    <div class="bullet">•</div>
+    <div class="text">chnerichs0822@gmail.com</div>
+  </div>
+  <!-- Summary -->
+  <div class="summary-row">
+    <h1 class="section-title summary-heading">Summery</h1>
+    <p class="summary-text">
+      Computer Science student with experience in software development and graphical pipelines.
+      Skilled in C++ and Rust, with strong abilities in writing maintainable code and designing
+      overall system architecture. Looking for gainful employment where I can continue developing
+      my software skills in a professional collaborativeteam environment that fosters professionalism 
+    </p>
+  </div>
+  <!-- Experience -->
+  <div class="experience-wrap">
+    <!-- Row 1 -->
+    <div class="experience-row">
+      <div class="experience-left">
+        <h1 class="experience-title">Professional Experience</h1>
+      </div>
+      <div class="timeline">
+        <div class="timeline-top"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="experience-main">
+        <h2>Voxidizer</h2>
+        <h3>3D Voxel rendering Engine</h3>
+        <ul>
+          <li>Wgsl shader programing</li>
+          <li>Graphics pipelining</li>
+          <li>Creating design documents</li>
+          <li>Programming in Rust</li>
+          <li>Developing an internal team organization</li>
+		  <li> Developing unit testing in Rust</li>
+      </div>
+      <div class="experience-dates">
+        <div><strong>Start:</strong> Jan 2025</div>
+        <div><strong>Stop:</strong> May 2026</div>
+      </div>
+    </div>
+    <!-- Row 2 -->
+    <div class="experience-row">
+      <div class="experience-left"></div>
+      <div class="timeline">
+        <div class="timeline-top"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="experience-main">
+        <h2>Organizational Management</h2>
+        <h3>Advised Expansion</h3>
+        <ul>
+          <li>Developing strategies for outreach to inceares members</li>
+          <li>Developing strategies to retain members</li>
+          <li>Organizing interorganizational events</li>
+          <li>Hosting Competitive events</li>
+          <li>Raising funds and Security sponsors</li>
+		  <li> Integrating sponsor feedback into Deliverables</li>
+        </ul>
+      </div>
+      <div class="experience-dates">
+        <div><strong>Start:</strong> Jan 2025</div>
+        <div><strong>Stop:</strong> May 2026</div>
+      </div>
+    </div>
+  </div>
+  <!-- Lower Sections -->
+  <div class="lower-sections">
+    <!-- Education -->
+    <div class="info-row">
+      <div class="info-left">
+        <h1>Education</h1>
+      </div>
+      <div class="info-main">
+        <div class="education-block">
+          <div class="education-text">
+            <div class="degree">Bachelors of Computer Science</div>
+            <div class="school">Southern Illinois University Edwardsville</div>
+            <div class="education-gap"></div>
+            <div class="degree">Associates of Science</div>
+            <div class="school">Southwestern Illinois College</div>
+          </div>
+          <div class="education-years">
+            <div><strong>Completion Year:</strong> 2026</div>
+            <div><strong>Completion Year:</strong> 2023</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Skills -->
+    <div class="info-row">
+      <div class="info-left">
+        <h1>Additional Skills</h1>
+      </div>
+      <div class="info-main">
+        <div class="skills-list">
+          <ul>
+            <li>JavaScript</li>
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>HTML/CSS</li>
+            <li>Git &amp; GitHub</li>
+            <li>Problem Solving</li>
+            <li>Basic AI / Reinforcement Learning concepts</li>
+            <li>Debugging &amp; Testing</li>
+            <li>Digital art & rendering</li>
+			<il> Understanding computational models</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
