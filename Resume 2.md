@@ -152,7 +152,7 @@
   }
   .experience-main h2 {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     border: none;
   }
   .experience-main h3 {
@@ -238,7 +238,7 @@
   .skills-list ul {
     margin: 0;
     padding-left: 18px;
-    line-height: 1.3;
+    line-height: 1.0;
     font-size: 0.95rem;
   }
 </style>
