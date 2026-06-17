@@ -120,7 +120,7 @@
   }
   .experience-left {
     width: 180px;
-    flex: 0 0 180px;
+    flex: 0 0 160px;
   }
   .experience-title {
     margin: 0;
@@ -142,7 +142,7 @@
   }
   .timeline-line {
     width: 2px;
-    height: 170px;
+    height: 290px;
     background: black;
   }
   .experience-main {
@@ -257,10 +257,7 @@
   <div class="summary-row">
     <h1 class="section-title summary-heading">Summery</h1>
     <p class="summary-text">
-      Computer Science student with experience in software development and graphical pipelines.
-      Skilled in C++ and Rust, with strong abilities in writing maintainable code and designing
-      overall system architecture. Looking for gainful employment where I can continue developing
-      my software skills in a professional collaborativeteam environment that fosters professionalism 
+      Computer Science student with experience in software development, graphics pipelines, and systems programming. Skilled in C++ and Rust, with a strong focus on writing maintainable code and designing scalable software architectures. Experienced in shader programming, AI-assisted tooling, and automated testing. Seeking an opportunity to grow as a software developer in a collaborative and professional environment.
     </p>
   </div>
   <!-- Experience -->
@@ -278,12 +275,12 @@
         <h2>Voxidizer</h2>
         <h3>3D Voxel rendering Engine</h3>
         <ul>
-          <li>Wgsl shader programing</li>
-          <li>Graphics pipelining</li>
-          <li>Creating design documents</li>
-          <li>Programming in Rust</li>
-          <li>Developing an internal team organization</li>
-		  <li> Developing unit testing in Rust</li>
+          <li>Developed voxel rendering systems using Rust and WGSL shader programming</li>
+          <li>Worked on graphics pipeline architecture and rendering optimization</li>
+          <li>Created and maintained technical design documentation</li>
+          <li>Designed maintainable and modular software systems</li>
+          <li>Assisted with internal team organization and development workflow</li>
+		      <li>Developed unit tests in Rust to improve code reliability and maintainability</li>
       </div>
       <div class="experience-dates">
         <div><strong>Start:</strong> Jan 2025</div>
@@ -298,15 +295,15 @@
         <div class="timeline-line"></div>
       </div>
       <div class="experience-main">
-        <h2>Organizational Management</h2>
-        <h3>Advised Expansion</h3>
+        <h2> Ebay Product Sentiment Scraper</h2>
+        <h3> Web scraping and AI Evaluation</h3>
         <ul>
-          <li>Developing strategies for outreach to inceares members</li>
-          <li>Developing strategies to retain members</li>
-          <li>Organizing interorganizational events</li>
-          <li>Hosting Competitive events</li>
-          <li>Raising funds and Security sponsors</li>
-		  <li> Integrating sponsor feedback into Deliverables</li>
+          <li>Built Python tools for scraping and processing product review data</li>
+          <li>Integrated local AI models through Ollama for sentiment evaluation</li>
+          <li>Parsed AI-generated feedback into quantitative metrics and scores</li>
+          <li>Processed and cleaned HTML data for automated analysis workflows</li>
+          <li>Stored and managed scraped comment datasets for later AI evaluation</li>
+		      <li>Developed automated testing workflows for reliability and validation</li>
         </ul>
       </div>
       <div class="experience-dates">
@@ -346,16 +343,20 @@
       <div class="info-main">
         <div class="skills-list">
           <ul>
+            <li>Rust</li>
+            <li>C++</li>
             <li>JavaScript</li>
             <li>Node.js</li>
-            <li>Python</li>
             <li>HTML/CSS</li>
             <li>Git &amp; GitHub</li>
-            <li>Problem Solving</li>
-            <li>Basic AI / Reinforcement Learning concepts</li>
-            <li>Debugging &amp; Testing</li>
-            <li>Digital art & rendering</li>
-			<il> Understanding computational models</li>
+            <li>WGSL Shader Programming</li>
+            <li>Graphics Rendering Pipelines</li>
+            <li>Debugging & Testing</li>
+            <li>Unit Testing</li>
+            <li>Web Scraping</li>
+            <li>AI Model Automation with Ollama</li>
+            <li>Basic Artificial Intelligence & Reinforcement Learning Concepts</li>
+            <li>Software Architecture & Computational Models</li>
           </ul>
         </div>
       </div>
